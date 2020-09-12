@@ -1,0 +1,46 @@
+:root{
+    --border: grey;
+    --padding: 10px;
+}
+.sheet{
+    width: calc(210mm - calc(var(--padding) * 2));
+    height: calc(297mm - calc(var(--padding) * 2));
+    outline: 1px solid var(--border);
+  }
+.examples{
+    width: 100%;
+    height: calc(297mm - calc(var(--padding) * 2) - 40px);
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(5, 1fr);  
+    font-family: monospace;
+    font-size: 16px;
+    padding: var(--padding);
+    font-weight: bold;
+}
+
+.answer span{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    outline: 1px solid var(--border);;
+}
+.answer{
+   /*outline: 1px solid red;*/
+}
+.item{
+    align-self: center;
+    justify-self: flex-start;
+}
+.dificalt{
+    background-color:#f1eeee;
+}
+.el-1,.el-2{
+    display:inline-block;
+    width: 26px;
+    text-align: center;
+     /*outline: 1px solid red;*/
+}
+#count{
+    font-weight: bold;
+}
