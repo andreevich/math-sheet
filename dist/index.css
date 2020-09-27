@@ -12,7 +12,7 @@
     height: calc(297mm - calc(var(--padding) * 2) - 40px);
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(5, 1fr);  
+    grid-template-columns: repeat(3, 1fr);  
     font-family: monospace;
     font-size: 16px;
     padding: var(--padding);
@@ -23,7 +23,7 @@
     display: inline-block;
     width: 19px;
     height: 19px;
-    outline: 1px solid var(--border);;
+    outline: 1px solid var(--border);
 }
 .answer{
    /*outline: 1px solid red;*/
@@ -37,7 +37,7 @@
 }
 .el-1,.el-2{
     display:inline-block;
-    width: 26px;
+    width: 56px;
     text-align: center;
      /*outline: 1px solid red;*/
 }
