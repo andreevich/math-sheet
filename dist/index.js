@@ -15,15 +15,17 @@
         }
     }
 
-    const maxInt = 101;
+    const maxInt = 201;
     const minInt = 0;
-    const count = 102;
+    const count = 160;
     const OPERATION = {
         PLUS: '+',
         MINUS: '-',
 		MULTY: 'x',
 		DIV: ':'
     }
+	let stat = {};
+	
     const randomItem = (min = minInt, max = maxInt) => {
         let rand = min + Math.random() * (max + 1 - min);
         return Math.floor(rand);
@@ -41,6 +43,13 @@
 
             let arr = [numb1, numb2];
             let operation = randomOperation();
+			
+			if(!stat.hasOwnProperty(operation)){
+				stat[operation] = 1;
+			}
+			else{
+				stat[operation]++;
+			}
 			
             if (operation === OPERATION.MINUS) {
                 examples.push(new Exam(arr.sort((a, b) => b - a), operation));
@@ -72,8 +81,13 @@
             div.innerHTML = Exam.draw(el);
             return div;
         })
+		let statistics = Object.entries(stat)
+			.sort((a,b) => a[1] - b[1])
+			.map(el => `${el[0]} ${(el[1]/count*100).toFixed(1)}%`)
+			.join(', ')
         document.querySelector('.examples').append(...examples)
         document.querySelector('#count').innerHTML = count;
+		document.querySelector('#stat').innerHTML = statistics;
         document.querySelector('#date').innerHTML = new Date().toLocaleString();
     }
     document.addEventListener("DOMContentLoaded", ready);

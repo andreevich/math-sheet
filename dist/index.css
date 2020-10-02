@@ -1,21 +1,25 @@
 :root{
     --border: grey;
-    --padding: 10px;
+    --padding: 2px;
 }
 .sheet{
-    width: calc(210mm - calc(var(--padding) * 2));
-    height: calc(297mm - calc(var(--padding) * 2));
+    width: 210mm;
+	height:100%;
     outline: 1px solid var(--border);
-  }
+}
+@media print{
+	.sheet{
+		outline: none;
+	}
+}
 .examples{
     width: 100%;
-    height: calc(297mm - calc(var(--padding) * 2) - 40px);
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(3, 1fr);  
+    grid-template-columns: repeat(4, 1fr);  
     font-family: monospace;
     font-size: 16px;
-    padding: var(--padding);
+    padding: var(--padding) 0;
     font-weight: bold;
 }
 
@@ -37,7 +41,7 @@
 }
 .el-1,.el-2{
     display:inline-block;
-    width: 56px;
+    width: 46px;
     text-align: center;
      /*outline: 1px solid red;*/
 }
